@@ -13,12 +13,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.surasith.healthy.sleep.SleepFragment;
 import com.example.surasith.healthy.weight.WeightFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 public class MenuFragment extends Fragment{
+    ListView menuList;
+    TextView eMail;
+    FirebaseAuth user = FirebaseAuth.getInstance();
     ArrayList<String> menu = new ArrayList<>();
 
     @Nullable
@@ -35,42 +39,43 @@ public class MenuFragment extends Fragment{
         menu.clear();
         menu.add("BMI");
         menu.add("Weight");
+        menu.add("Sleep Time");
         menu.add("Sign out");
 
-        ArrayAdapter<String> menuAdapter = new ArrayAdapter<>(
-                getActivity(), android.R.layout.simple_list_item_1, menu);
+        ArrayAdapter<String> menuAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, menu);
 
         // get ListView from fragment_menu.xml
-        ListView menuList = getView().findViewById(R.id.menu_list);
+        menuList = getView().findViewById(R.id.menu_list);
         menuList.setAdapter(menuAdapter);
         menuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("MENU", "Click on menu = " + menu.get(position));
 
-                if(position < 2){
-                    Fragment fragment[] = {new BMIFragment(), new WeightFragment()};
+                if(position <= 2){
+                    Fragment fragments[] = {new BMIFragment(), new WeightFragment(), new SleepFragment()};
+                    changeFragment(fragments[position]);
+                } else {
+                    user.signOut();
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.main_view, fragment[position])
-                            .addToBackStack(null)
+                            .replace(R.id.main_view, new LoginFragment())
                             .commit();
-                } else {
-                    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                    firebaseAuth.signOut();
-                    getFragmentManager().popBackStack();
-//                    getActivity().getSupportFragmentManager()
-//                            .beginTransaction()
-//                            .replace(R.id.main_view, new LoginFragment())
-//                            .addToBackStack(null)
-//                            .commit();
                 }
 
             }
         });
 
-        TextView eMail = getView().findViewById(R.id.menu_username);
-        FirebaseAuth user = FirebaseAuth.getInstance();
+        eMail = getView().findViewById(R.id.menu_username);
+
         if(user.getCurrentUser() != null) eMail.setText(user.getCurrentUser().getEmail());
+    }
+
+    private void changeFragment(Fragment fragment){
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_view, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 }

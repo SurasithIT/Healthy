@@ -14,10 +14,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sleep_form_end" />
+        app:layout_constraintTop_toBottomOf="@+id/sleep_form_end"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/sleep_form_date"
@@ -25,40 +28,44 @@
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="84dp"
-        android:drawableLeft="@drawable/ic_date"
+        android:drawableStart="@drawable/ic_date"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/date"
         android:inputType="date"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sleep_form_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/sleep_form_start"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:drawableLeft="@drawable/ic_clock"
+        android:drawableStart="@drawable/ic_clock"
         android:ems="10"
         android:focusable="false"
         android:gravity="center"
         android:hint="@string/bedtime"
         android:inputType="time"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/sleep_form_end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sleep_form_date" />
+        app:layout_constraintTop_toBottomOf="@+id/sleep_form_date"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/sleep_form_end"
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:drawableLeft="@drawable/ic_clock"
+        android:drawableStart="@drawable/ic_clock"
         android:ems="10"
         android:focusable="false"
         android:gravity="center"
@@ -68,6 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sleep_form_start" />
+        app:layout_constraintTop_toBottomOf="@+id/sleep_form_start"
+        android:autofillHints="" />
 
 </android.support.constraint.ConstraintLayout>

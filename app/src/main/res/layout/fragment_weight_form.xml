@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="@string/back"
+        app:layout_constraintBottom_toTopOf="@+id/weightForm_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +22,9 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:layout_marginBottom="268dp"
         android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightForm_weight" />
@@ -35,6 +38,7 @@
         android:ems="10"
         android:hint="Date"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/weightForm_weight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weightForm_back" />
@@ -47,6 +51,7 @@
         android:ems="10"
         android:hint="@string/weight"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/weightForm_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"

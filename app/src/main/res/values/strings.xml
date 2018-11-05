@@ -16,4 +16,5 @@
     <string name="date">Date</string>
     <string name="bedtime">Bedtime</string>
     <string name="wakingtime">Waking time</string>
+    <string name="button">Button</string>
 </resources>
