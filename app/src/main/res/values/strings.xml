@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Healthy</string>
+    <string name="userId">E-mail</string>
+    <string name="password">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="register">Register New Account</string>
+
+    <string name="height">Height (cm)</string>
+    <string name="weight">Weight (kg)</string>
+    <string name="calculate">Calculate</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="password_not_match">Passwords do not match</string>
+
+    <!-- in sleep form -->
+    <string name="date">Date</string>
+    <string name="bedtime">Bedtime</string>
+    <string name="wakingtime">Waking time</string>
+</resources>
