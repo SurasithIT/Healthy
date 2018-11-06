@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:layout_gravity="center">
 
     <TextView
         android:id="@+id/sleep_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="151dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/sleep_start"
         app:layout_constraintEnd_toStartOf="@+id/sleep_duration"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,8 +24,9 @@
         android:id="@+id/sleep_start"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="7dp"
-        android:text="TextView"
+        android:text="22.00 - 05.00"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sleep_duration"
@@ -32,15 +35,18 @@
 
     <TextView
         android:id="@+id/sleep_duration"
-        android:layout_width="165dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="68dp"
-        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="07.00"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sleep_start"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
