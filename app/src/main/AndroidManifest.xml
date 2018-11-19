@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".sleep.SleepFormActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".post.comment.CommentActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
